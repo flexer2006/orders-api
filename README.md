@@ -9,11 +9,13 @@
 - Восстанавливает кеш из базы при старте.
 - Возвращает заказ по `order_uid` через JSON‑API и простую HTML‑страницу.
 
+[Смотреть демонстрацию](docs/video/demonstration.mp4)
+
 ## Быстрый старт и проверка
 1. Скопируйте шаблоны конфигураций:
 ```bash
-cp .env.example .env
-cp .config.yml.example config.yml
+cp deploy/.env.example deploy/.env
+cp configs/.config.yml.example configs/config.yml
 ```
 
 2. Перейдите в каталог `deploy` и соберите/запустите Docker Compose:
