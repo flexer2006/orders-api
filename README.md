@@ -2,11 +2,13 @@
 
 A Go microservice that consumes order data from Kafka, stores it in PostgreSQL, and caches it in memory for fast access through an HTTP API and a simple web page.
 
+Note! This is an educational project intended to practice Go backend development, architecture, and working with Kafka and PostgreSQL. It is not a production-ready service.
+
 ## What the service does
 
 * Subscribes to a Kafka topic and processes JSON messages containing the order model.
 * Validates and stores orders in PostgreSQL within transactions.
-* Caches recent orders in memory (`sync.Map`) to speed up repeated requests.
+* Caches recent orders in memory to speed up repeated requests.
 * Restores the cache from the database on startup.
 * Returns an order by `order_uid` through a JSON API and a simple HTML page.
 
