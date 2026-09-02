@@ -74,8 +74,7 @@ func configureViper(vpr *viper.Viper) {
 
 func loadConfigFile(vpr *viper.Viper) error {
 	if err := vpr.ReadInConfig(); err != nil {
-		var configFileNotFoundError viper.ConfigFileNotFoundError
-		if !errors.As(err, &configFileNotFoundError) {
+		if _, ok := errors.AsType[viper.ConfigFileNotFoundError](err); !ok {
 			return fmt.Errorf("failed to read config file: %w", err)
 		}
 	}
